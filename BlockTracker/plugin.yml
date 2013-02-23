@@ -1,0 +1,33 @@
+name: BTracker
+main: naterich2.BTracker
+version: 1.1
+commands:
+    holding:
+        description: Displays information about what players are holdin a certain block and how many he/she has, only shows info for online players
+        usage: /holding [Material]
+        permission: BTracker.holding
+    NaturalItems:
+        description: Displays how many natural blocks of a certain type are within the radius from a location
+        usage: /NaturalItems [Material] [radius] [x point] [y point] [z point] [World]
+        permission: BTracker.NaturalItems
+    NaturalAroundMe:
+        description: Players can use this to see how many natural blocks of a certain type are within a radius from them
+        usage: /NaturalAroundMe [Material] [Radius]
+        permission: BTracker.NaturalAroundMe
+permissions:
+    BTracker.*:
+    	description: Gives access to all BTracker commands
+    	children:
+    	    BTracker.holding: true
+    	    BTracker.NaturalItems: true
+    	    BTracker.NaturalAroundMe:
+    BTracker.holding:
+        description: Gives access to the holding command
+        default: op
+    BTracker.NaturalItems:
+        description: Gives access to the NaturalItems command
+        default: op 
+    BTracker.NaturalAroundMe:
+        description: Gives access to the NaturalAroundMe command
+        default: op 
+        
